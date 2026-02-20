@@ -1,4 +1,15 @@
 {
+  "villager_hurt": {
+    "category": "neutral",
+    "subtitle": "subtitles.tutorialmod.villager_hurt",
+    "sounds": [
+      {
+        "name": "tutorialmod:villager_hurt",
+        "stream": true
+      }
+    ]
+  },
+
   "rezero_death": {
     "category": "player",
     "subtitle": "subtitles.tutorialmod.rezero_death",

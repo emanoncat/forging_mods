@@ -21,4 +21,12 @@ public class ModSounds {
                             ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "rezero_death")
                     )
             );
+
+    public static final RegistryObject<SoundEvent> VILLAGER_HURT =
+            SOUND_EVENTS.register("villager_hurt",
+                    () -> SoundEvent.createVariableRangeEvent(
+                            ResourceLocation.fromNamespaceAndPath(TutorialMod.MOD_ID, "villager_hurt")
+                    )
+            );
 }
+

@@ -3,6 +3,7 @@ package net.emanon.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.emanon.tutorialmod.event.DeathEventHandler;
 import net.emanon.tutorialmod.event.GameRuleHandler;
+import net.emanon.tutorialmod.event.VillagerHurtHandler;
 import net.emanon.tutorialmod.item.ModItems;
 import net.emanon.tutorialmod.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTab;
@@ -40,6 +41,8 @@ public class TutorialMod {
         MinecraftForge.EVENT_BUS.register(this);
         ITEMS.register(modEventBus);
         // Register the item to a creative tab
+        MinecraftForge.EVENT_BUS.register(new VillagerHurtHandler());
+
         modEventBus.addListener(this::addCreative);
         MinecraftForge.EVENT_BUS.register(new DeathEventHandler());
         MinecraftForge.EVENT_BUS.register(new GameRuleHandler());
