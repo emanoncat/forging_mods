@@ -1,7 +1,10 @@
 package net.emanon.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.emanon.tutorialmod.event.DeathEventHandler;
+import net.emanon.tutorialmod.event.GameRuleHandler;
 import net.emanon.tutorialmod.item.ModItems;
+import net.emanon.tutorialmod.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,6 +41,11 @@ public class TutorialMod {
         ITEMS.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+        MinecraftForge.EVENT_BUS.register(new DeathEventHandler());
+        MinecraftForge.EVENT_BUS.register(new GameRuleHandler());
+
+        ModSounds.SOUND_EVENTS.register(modEventBus);
+
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

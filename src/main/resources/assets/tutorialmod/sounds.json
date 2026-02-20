@@ -1,0 +1,12 @@
+{
+  "rezero_death": {
+    "category": "player",
+    "subtitle": "subtitles.tutorialmod.rezero_death",
+    "sounds": [
+      {
+        "name": "tutorialmod:rezero_death",
+        "stream": true
+      }
+    ]
+  }
+}
